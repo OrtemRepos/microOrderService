@@ -1,0 +1,42 @@
+[project]
+name = "order-service"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "loguru>=0.7.3",
+    "protobuf>=5.29.1",
+    "pydantic>=2.10.3",
+    "sqlalchemy>=2.0.36",
+]
+
+[tool.pyright]
+ingore = ["src/generated"]
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 79
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13.0",
+    "pytest>=8.3.4",
+    "rich>=13.9.4",
+]
